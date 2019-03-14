@@ -51,8 +51,8 @@ class GameInterfaceController: WKInterfaceController {
         
         // Show sequence and start timer and hide it after seconds become 0.
         self.showSequence()
-        self.timeLabel.setText("\(3)")
-        self.initializeTimer(seconds: 3)
+        self.timeLabel.setText("\(5)")
+        self.initializeTimer(seconds: 5)
         
         
     }
@@ -166,19 +166,30 @@ class GameInterfaceController: WKInterfaceController {
     // Show the sequence
     func showSequence(){
         
-        var predifinedArray = ["apple", "banana", "grapes", "watermelon"]
+        let predifinedArray = ["apple", "banana", "grapes", "watermelon"]
         
         // Pick random fruit from array and store it into random sequence
         for _ in 0..<4{
             self.randomSequence.append(predifinedArray.randomElement()!)
         }
-        
         //print("RANDOM: \(self.randomSequence)")
+        
+        
+        
+        // Show the random sequence to user
+        self.memorizeImage1.setImageNamed(self.randomSequence[0])
+        self.memorizeImage2.setImageNamed(self.randomSequence[1])
+        self.memorizeImage3.setImageNamed(self.randomSequence[2])
+        self.memorizeImage4.setImageNamed(self.randomSequence[3])
         
     }
     
     // Hide the sequence
     func hideSequence(){
+        self.memorizeImage1.setImageNamed("imageLock")
+        self.memorizeImage2.setImageNamed("imageLock")
+        self.memorizeImage3.setImageNamed("imageLock")
+        self.memorizeImage4.setImageNamed("imageLock")
         
     }
     
