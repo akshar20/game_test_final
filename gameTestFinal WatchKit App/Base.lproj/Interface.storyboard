@@ -83,12 +83,12 @@
                             <items>
                                 <group width="32" alignment="left" layout="vertical" id="Edj-8D-YuP">
                                     <items>
-                                        <button width="24" height="24" alignment="left" backgroundImage="apple" id="4ZG-XI-geq">
+                                        <button width="24" height="24" alignment="left" hidden="YES" backgroundImage="apple" id="4ZG-XI-geq">
                                             <connections>
                                                 <action selector="appleButtonPressed" destination="GYw-0B-pbs" id="y0H-Z8-jEa"/>
                                             </connections>
                                         </button>
-                                        <button width="24" height="24" alignment="left" backgroundImage="grapes" id="K1M-5K-JaH">
+                                        <button width="24" height="24" alignment="left" hidden="YES" backgroundImage="grapes" id="K1M-5K-JaH">
                                             <connections>
                                                 <action selector="grapesButtonPressed" destination="GYw-0B-pbs" id="GXk-tg-j3v"/>
                                             </connections>
@@ -97,12 +97,12 @@
                                 </group>
                                 <group width="1" alignment="left" layout="vertical" id="Et4-cZ-PsI">
                                     <items>
-                                        <button width="24" height="24" alignment="left" backgroundImage="banana" id="zcr-4F-h7H">
+                                        <button width="24" height="24" alignment="left" hidden="YES" backgroundImage="banana" id="zcr-4F-h7H">
                                             <connections>
                                                 <action selector="bananaButtonPressed" destination="GYw-0B-pbs" id="HJs-RN-VhX"/>
                                             </connections>
                                         </button>
-                                        <button width="24" height="24" alignment="left" backgroundImage="watermelon" id="9uk-gM-F09">
+                                        <button width="24" height="24" alignment="left" hidden="YES" backgroundImage="watermelon" id="9uk-gM-F09">
                                             <connections>
                                                 <action selector="watermelonButtonPressed" destination="GYw-0B-pbs" id="Aat-pY-0VG"/>
                                             </connections>
@@ -118,6 +118,10 @@
                         <outlet property="memorizeImage2" destination="YPD-xR-dkS" id="cDL-pc-dJk"/>
                         <outlet property="memorizeImage3" destination="f1r-Iw-Wr6" id="2bl-wH-ht2"/>
                         <outlet property="memorizeImage4" destination="uzQ-XF-Faz" id="jna-Xa-g1d"/>
+                        <outlet property="selectableButtonApple" destination="4ZG-XI-geq" id="lq6-4T-15J"/>
+                        <outlet property="selectableButtonBanana" destination="zcr-4F-h7H" id="ynd-Ct-2L1"/>
+                        <outlet property="selectableButtonGrapes" destination="K1M-5K-JaH" id="xhd-v5-ADe"/>
+                        <outlet property="selectableButtonWatermelon" destination="9uk-gM-F09" id="pVz-zE-LtO"/>
                         <outlet property="timeLabel" destination="xZb-Jb-B7l" id="yDk-p3-W8f"/>
                     </connections>
                 </controller>

@@ -18,12 +18,15 @@ class GameInterfaceController: WKInterfaceController {
     
     
     // Game Sprite References
-    
     @IBOutlet weak var memorizeImage1: WKInterfaceImage!
     @IBOutlet weak var memorizeImage2: WKInterfaceImage!
     @IBOutlet weak var memorizeImage3: WKInterfaceImage!
     @IBOutlet weak var memorizeImage4: WKInterfaceImage!
     @IBOutlet weak var timeLabel: WKInterfaceLabel!
+    @IBOutlet weak var selectableButtonApple: WKInterfaceButton!
+    @IBOutlet weak var selectableButtonBanana: WKInterfaceButton!
+    @IBOutlet weak var selectableButtonGrapes: WKInterfaceButton!
+    @IBOutlet weak var selectableButtonWatermelon: WKInterfaceButton!
     
     
     // Game Stats Variables
@@ -51,8 +54,16 @@ class GameInterfaceController: WKInterfaceController {
         
         // Show sequence and start timer and hide it after seconds become 0.
         self.showSequence()
-        self.timeLabel.setText("\(5)")
-        self.initializeTimer(seconds: 5)
+        
+        if(gameLevel == "easy"){
+            self.timeLabel.setText("\(5)")
+            self.initializeTimer(seconds: 5)
+        
+        }else{
+            self.timeLabel.setText("\(3)")
+            self.initializeTimer(seconds: 3)
+        }
+        
         
         
     }
@@ -80,6 +91,8 @@ class GameInterfaceController: WKInterfaceController {
         
         if(self.noOfInputs <= 3){
             self.givenSequence.append("apple")
+            // Set fruit in postion
+            self.selectFruit(name: "apple")
             self.noOfInputs += 1
         
             // Check selected input is last or not
@@ -96,6 +109,8 @@ class GameInterfaceController: WKInterfaceController {
     @IBAction func bananaButtonPressed() {
         if(self.noOfInputs <= 3){
             self.givenSequence.append("banana")
+            // Set fruit in postion
+            self.selectFruit(name: "banana")
             self.noOfInputs += 1
         
             // Check selected input is last or not
@@ -113,6 +128,8 @@ class GameInterfaceController: WKInterfaceController {
     @IBAction func grapesButtonPressed() {
         if(self.noOfInputs <= 3){
             self.givenSequence.append("grapes")
+            // Set fruit in postion
+            self.selectFruit(name: "grapes")
             self.noOfInputs += 1
         
             // Check selected input is last or not
@@ -130,6 +147,8 @@ class GameInterfaceController: WKInterfaceController {
     @IBAction func watermelonButtonPressed() {
         if(self.noOfInputs <= 3){
             self.givenSequence.append("watermelon")
+            // Set fruit in postion
+            self.selectFruit(name: "watermelon")
             self.noOfInputs += 1
             
             // Check selected input is last or not
@@ -156,9 +175,13 @@ class GameInterfaceController: WKInterfaceController {
             
             if runCount == seconds {
                 timer.invalidate()
+                self.timeLabel.setText("Select Fruits!")
                 
                 // Hide the sequence
                 self.hideSequence()
+                
+                // Show selectable fruit buttons
+                self.showSelectableFruitButtons()
             }
         }
     }
@@ -194,11 +217,45 @@ class GameInterfaceController: WKInterfaceController {
     }
     
     
+    // Show fruit Buttons
+    func showSelectableFruitButtons(){
+        
+        self.selectableButtonApple.setHidden(false)
+        self.selectableButtonBanana.setHidden(false)
+        self.selectableButtonGrapes.setHidden(false)
+        self.selectableButtonWatermelon.setHidden(false)
+    }
+    
+    
+    // Set fruit position as user selects
+    func selectFruit(name: String){
+        
+        if(self.noOfInputs == 0){
+            self.memorizeImage1.setImageNamed(name)
+        
+        }else if(self.noOfInputs == 1){
+            self.memorizeImage2.setImageNamed(name)
+            
+        }else if(self.noOfInputs == 2){
+            self.memorizeImage3.setImageNamed(name)
+            
+        }else if(self.noOfInputs == 3){
+            self.memorizeImage4.setImageNamed(name)
+            
+        }
+        
+    }
+    
+    
     // MATCHING SEQUENCE
     func matchTheSequence(){
-        
-        //print("USER SELECTED: \(self.givenSequence)")
-        
+        if(self.randomSequence == self.givenSequence){
+            self.timeLabel.setText("You win \(self.sharedPreference.string(forKey: "playerName")!)!")
+            
+        }else{
+            self.timeLabel.setText("Oops Wrong!")
+        }
+
     }
    
     
