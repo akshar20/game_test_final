@@ -19,6 +19,8 @@
 		9BC90940223A8F750070D6B9 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9093F223A8F750070D6B9 /* InterfaceController.swift */; };
 		9BC90942223A8F750070D6B9 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC90941223A8F750070D6B9 /* ExtensionDelegate.swift */; };
 		9BC90944223A8F760070D6B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BC90943223A8F760070D6B9 /* Assets.xcassets */; };
+		9BC90954223A9DBD0070D6B9 /* ChooseDifficultyInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC90953223A9DBD0070D6B9 /* ChooseDifficultyInterfaceController.swift */; };
+		9BC90956223AA0580070D6B9 /* GameInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC90955223AA0580070D6B9 /* GameInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		9BC90941223A8F750070D6B9 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		9BC90943223A8F760070D6B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BC90945223A8F760070D6B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BC90953223A9DBD0070D6B9 /* ChooseDifficultyInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDifficultyInterfaceController.swift; sourceTree = "<group>"; };
+		9BC90955223AA0580070D6B9 /* GameInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 				9BC90941223A8F750070D6B9 /* ExtensionDelegate.swift */,
 				9BC90943223A8F760070D6B9 /* Assets.xcassets */,
 				9BC90945223A8F760070D6B9 /* Info.plist */,
+				9BC90953223A9DBD0070D6B9 /* ChooseDifficultyInterfaceController.swift */,
+				9BC90955223AA0580070D6B9 /* GameInterfaceController.swift */,
 			);
 			path = "gameTestFinal WatchKit Extension";
 			sourceTree = "<group>";
@@ -297,6 +303,8 @@
 			files = (
 				9BC90942223A8F750070D6B9 /* ExtensionDelegate.swift in Sources */,
 				9BC90940223A8F750070D6B9 /* InterfaceController.swift in Sources */,
+				9BC90954223A9DBD0070D6B9 /* ChooseDifficultyInterfaceController.swift in Sources */,
+				9BC90956223AA0580070D6B9 /* GameInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

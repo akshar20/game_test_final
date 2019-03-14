@@ -84,7 +84,10 @@ class InterfaceController: WKInterfaceController {
         
         }else{ // Player is registered
             
-         
+            
+            // Move to next screen
+            presentController(withName: "chooseDifficultySegue", context: nil)
+
         }
         
     }

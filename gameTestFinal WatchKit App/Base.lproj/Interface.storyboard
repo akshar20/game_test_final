@@ -32,5 +32,45 @@
             </objects>
             <point key="canvasLocation" x="-61" y="-49"/>
         </scene>
+        <!--chooseDifficultySegue-->
+        <scene sceneID="8dw-tg-CJe">
+            <objects>
+                <controller identifier="chooseDifficultySegue" id="tJh-6d-1Dg" customClass="ChooseDifficultyInterfaceController" customModule="gameTestFinal_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Hello Label" textAlignment="center" id="qCo-uS-CPq"/>
+                        <separator alignment="left" id="Ukf-sg-l3H">
+                            <color key="color" red="0.054498137269999997" green="0.66976466720000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </separator>
+                        <label alignment="center" text="Choose difficulty:" textAlignment="left" id="jAz-IP-PlZ"/>
+                        <button width="1" alignment="left" title="Easy" id="aci-hR-3PV">
+                            <connections>
+                                <action selector="easyButtonPressed" destination="tJh-6d-1Dg" id="nIv-x2-FO3"/>
+                                <segue destination="GYw-0B-pbs" kind="push" identifier="easySegue" id="X0u-Wx-foD"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Hard" id="JwM-Ep-Iae">
+                            <connections>
+                                <action selector="hardButtonPressed" destination="tJh-6d-1Dg" id="Frq-2v-P7G"/>
+                                <segue destination="GYw-0B-pbs" kind="push" identifier="hardSegue" id="0b6-3h-8D8"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="helloLabel" destination="qCo-uS-CPq" id="ILA-bA-afU"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="217" y="-49"/>
+        </scene>
+        <!--Game Interface Controller-->
+        <scene sceneID="QNr-tZ-d40">
+            <objects>
+                <controller id="GYw-0B-pbs" customClass="GameInterfaceController" customModule="gameTestFinal_WatchKit_Extension"/>
+            </objects>
+            <point key="canvasLocation" x="514" y="-49"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0b6-3h-8D8"/>
+    </inferredMetricsTieBreakers>
 </document>
