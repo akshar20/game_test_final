@@ -49,11 +49,8 @@ class GameInterfaceController: WKInterfaceController {
         }
         
         
-        // Show sequence and start timer
-        
-        
-        
-        
+        // Show sequence and start timer and hide it after seconds become 0.
+        self.showSequence()
         self.timeLabel.setText("\(3)")
         self.initializeTimer(seconds: 3)
         
@@ -85,8 +82,12 @@ class GameInterfaceController: WKInterfaceController {
             self.givenSequence.append("apple")
             self.noOfInputs += 1
         
+            // Check selected input is last or not
+            if(self.noOfInputs == 4){
+                self.matchTheSequence()
+            }
         }else{
-            
+            self.matchTheSequence()
         }
         
     }
@@ -97,8 +98,12 @@ class GameInterfaceController: WKInterfaceController {
             self.givenSequence.append("banana")
             self.noOfInputs += 1
         
+            // Check selected input is last or not
+            if(self.noOfInputs == 4){
+                self.matchTheSequence()
+            }
         }else{
-            
+            self.matchTheSequence()
         }
         
     }
@@ -110,8 +115,12 @@ class GameInterfaceController: WKInterfaceController {
             self.givenSequence.append("grapes")
             self.noOfInputs += 1
         
+            // Check selected input is last or not
+            if(self.noOfInputs == 4){
+                self.matchTheSequence()
+            }
         }else{
-            
+            self.matchTheSequence()
         }
        
     }
@@ -123,8 +132,12 @@ class GameInterfaceController: WKInterfaceController {
             self.givenSequence.append("watermelon")
             self.noOfInputs += 1
             
+            // Check selected input is last or not
+            if(self.noOfInputs == 4){
+                self.matchTheSequence()
+            }
         }else{
-            
+            self.matchTheSequence()
         }
     }
     
@@ -143,8 +156,38 @@ class GameInterfaceController: WKInterfaceController {
             
             if runCount == seconds {
                 timer.invalidate()
+                
+                // Hide the sequence
+                self.hideSequence()
             }
         }
+    }
+    
+    // Show the sequence
+    func showSequence(){
+        
+        var predifinedArray = ["apple", "banana", "grapes", "watermelon"]
+        
+        // Pick random fruit from array and store it into random sequence
+        for _ in 0..<4{
+            self.randomSequence.append(predifinedArray.randomElement()!)
+        }
+        
+        //print("RANDOM: \(self.randomSequence)")
+        
+    }
+    
+    // Hide the sequence
+    func hideSequence(){
+        
+    }
+    
+    
+    // MATCHING SEQUENCE
+    func matchTheSequence(){
+        
+        //print("USER SELECTED: \(self.givenSequence)")
+        
     }
    
     
