@@ -78,25 +78,48 @@
                             </items>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                         </group>
-                        <label alignment="center" verticalAlignment="center" text="Timer" id="xZb-Jb-B7l"/>
+                        <label alignment="center" verticalAlignment="center" text="Timer Loading..." id="xZb-Jb-B7l"/>
                         <group width="69" alignment="center" verticalAlignment="bottom" spacing="12" id="FWQ-wC-E48">
                             <items>
                                 <group width="32" alignment="left" layout="vertical" id="Edj-8D-YuP">
                                     <items>
-                                        <imageView width="24" height="24" alignment="left" image="apple" id="xWE-CK-zUK"/>
-                                        <imageView width="24" height="24" alignment="left" image="grapes" id="m59-sp-jSV"/>
+                                        <button width="24" height="24" alignment="left" backgroundImage="apple" id="4ZG-XI-geq">
+                                            <connections>
+                                                <action selector="appleButtonPressed" destination="GYw-0B-pbs" id="y0H-Z8-jEa"/>
+                                            </connections>
+                                        </button>
+                                        <button width="24" height="24" alignment="left" backgroundImage="grapes" id="K1M-5K-JaH">
+                                            <connections>
+                                                <action selector="grapesButtonPressed" destination="GYw-0B-pbs" id="GXk-tg-j3v"/>
+                                            </connections>
+                                        </button>
                                     </items>
                                 </group>
                                 <group width="1" alignment="left" layout="vertical" id="Et4-cZ-PsI">
                                     <items>
-                                        <imageView width="24" height="24" alignment="left" image="banana" id="Gfw-ky-QS6"/>
-                                        <imageView width="24" height="24" alignment="left" image="watermelon" id="ts5-b6-4q3"/>
+                                        <button width="24" height="24" alignment="left" backgroundImage="banana" id="zcr-4F-h7H">
+                                            <connections>
+                                                <action selector="bananaButtonPressed" destination="GYw-0B-pbs" id="HJs-RN-VhX"/>
+                                            </connections>
+                                        </button>
+                                        <button width="24" height="24" alignment="left" backgroundImage="watermelon" id="9uk-gM-F09">
+                                            <connections>
+                                                <action selector="watermelonButtonPressed" destination="GYw-0B-pbs" id="Aat-pY-0VG"/>
+                                            </connections>
+                                        </button>
                                     </items>
                                 </group>
                             </items>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="memorizeImage1" destination="AmO-aq-eU3" id="xXa-wg-RQ1"/>
+                        <outlet property="memorizeImage2" destination="YPD-xR-dkS" id="cDL-pc-dJk"/>
+                        <outlet property="memorizeImage3" destination="f1r-Iw-Wr6" id="2bl-wH-ht2"/>
+                        <outlet property="memorizeImage4" destination="uzQ-XF-Faz" id="jna-Xa-g1d"/>
+                        <outlet property="timeLabel" destination="xZb-Jb-B7l" id="yDk-p3-W8f"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="514" y="-49"/>

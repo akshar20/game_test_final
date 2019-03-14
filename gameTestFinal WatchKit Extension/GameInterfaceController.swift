@@ -17,6 +17,22 @@ class GameInterfaceController: WKInterfaceController {
     var gameLevel = "easy" // By default set it to easy
     
     
+    // Game Sprite References
+    
+    @IBOutlet weak var memorizeImage1: WKInterfaceImage!
+    @IBOutlet weak var memorizeImage2: WKInterfaceImage!
+    @IBOutlet weak var memorizeImage3: WKInterfaceImage!
+    @IBOutlet weak var memorizeImage4: WKInterfaceImage!
+    @IBOutlet weak var timeLabel: WKInterfaceLabel!
+    
+    
+    // Game Stats Variables
+    var randomSequence = [String]()
+    var givenSequence = [String]()
+    var noOfInputs = 0
+    
+    
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -33,7 +49,13 @@ class GameInterfaceController: WKInterfaceController {
         }
         
         
+        // Show sequence and start timer
         
+        
+        
+        
+        self.timeLabel.setText("\(3)")
+        self.initializeTimer(seconds: 3)
         
         
     }
@@ -48,5 +70,82 @@ class GameInterfaceController: WKInterfaceController {
     func isKeyPresentInUserDefaults(key: String) -> Bool {
         return UserDefaults.standard.object(forKey: key) != nil
     }
-
+    
+    
+    
+    //  ************* ************* ************* ************* ************* **********
+    //  ************* ************* ***** GAME FUNCTIONS  ************* ************* **
+    //  ************* ************* ************* ************* ************* **********
+    
+    
+    // Apple Button Pressed
+    @IBAction func appleButtonPressed() {
+        
+        if(self.noOfInputs <= 3){
+            self.givenSequence.append("apple")
+            self.noOfInputs += 1
+        
+        }else{
+            
+        }
+        
+    }
+    
+    // Banana Button Pressed
+    @IBAction func bananaButtonPressed() {
+        if(self.noOfInputs <= 3){
+            self.givenSequence.append("banana")
+            self.noOfInputs += 1
+        
+        }else{
+            
+        }
+        
+    }
+    
+    
+    // Grapes Button Pressed
+    @IBAction func grapesButtonPressed() {
+        if(self.noOfInputs <= 3){
+            self.givenSequence.append("grapes")
+            self.noOfInputs += 1
+        
+        }else{
+            
+        }
+       
+    }
+    
+    
+    // Watermelon Button Pressed
+    @IBAction func watermelonButtonPressed() {
+        if(self.noOfInputs <= 3){
+            self.givenSequence.append("watermelon")
+            self.noOfInputs += 1
+            
+        }else{
+            
+        }
+    }
+    
+    
+    
+    // TIMER
+    
+    func initializeTimer(seconds: Int){
+        var runCount = 0
+        
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            
+            runCount += 1
+            
+            self.timeLabel.setText("\(seconds - runCount)")
+            
+            if runCount == seconds {
+                timer.invalidate()
+            }
+        }
+    }
+   
+    
 }
