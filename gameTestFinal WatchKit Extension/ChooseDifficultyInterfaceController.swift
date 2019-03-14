@@ -40,10 +40,14 @@ class ChooseDifficultyInterfaceController: WKInterfaceController {
     
     
     @IBAction func easyButtonPressed() {
+        sharedPreference.set("easy", forKey: "GameLevel")
+        presentController(withName: "gameSegue", context: nil)
     }
-    
+
     
     @IBAction func hardButtonPressed() {
+        sharedPreference.set("hard", forKey: "GameLevel")
+        presentController(withName: "gameSegue", context: nil)
     }
     
 }

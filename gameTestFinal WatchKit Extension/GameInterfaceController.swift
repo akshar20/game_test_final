@@ -11,7 +11,11 @@ import Foundation
 
 
 class GameInterfaceController: WKInterfaceController {
-
+    
+    // Shared Preference
+    let sharedPreference = UserDefaults.standard
+    
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -21,6 +25,8 @@ class GameInterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        print(self.sharedPreference.string(forKey: "GameLevel"))
     }
 
     override func didDeactivate() {

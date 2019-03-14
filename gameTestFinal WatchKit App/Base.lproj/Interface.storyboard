@@ -45,13 +45,11 @@
                         <button width="1" alignment="left" title="Easy" id="aci-hR-3PV">
                             <connections>
                                 <action selector="easyButtonPressed" destination="tJh-6d-1Dg" id="nIv-x2-FO3"/>
-                                <segue destination="GYw-0B-pbs" kind="push" identifier="easySegue" id="X0u-Wx-foD"/>
                             </connections>
                         </button>
                         <button width="1" alignment="left" title="Hard" id="JwM-Ep-Iae">
                             <connections>
                                 <action selector="hardButtonPressed" destination="tJh-6d-1Dg" id="Frq-2v-P7G"/>
-                                <segue destination="GYw-0B-pbs" kind="push" identifier="hardSegue" id="0b6-3h-8D8"/>
                             </connections>
                         </button>
                     </items>
@@ -62,15 +60,12 @@
             </objects>
             <point key="canvasLocation" x="217" y="-49"/>
         </scene>
-        <!--Game Interface Controller-->
+        <!--gameSegue-->
         <scene sceneID="QNr-tZ-d40">
             <objects>
-                <controller id="GYw-0B-pbs" customClass="GameInterfaceController" customModule="gameTestFinal_WatchKit_Extension"/>
+                <controller identifier="gameSegue" id="GYw-0B-pbs" customClass="GameInterfaceController" customModule="gameTestFinal_WatchKit_Extension"/>
             </objects>
             <point key="canvasLocation" x="514" y="-49"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="0b6-3h-8D8"/>
-    </inferredMetricsTieBreakers>
 </document>
