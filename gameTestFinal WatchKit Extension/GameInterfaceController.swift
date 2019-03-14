@@ -14,6 +14,7 @@ class GameInterfaceController: WKInterfaceController {
     
     // Shared Preference
     let sharedPreference = UserDefaults.standard
+    var gameLevel = "easy" // By default set it to easy
     
     
     override func awake(withContext context: Any?) {
@@ -26,12 +27,26 @@ class GameInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        print(self.sharedPreference.string(forKey: "GameLevel"))
+        // Set it to its value set by the user
+        if(self.isKeyPresentInUserDefaults(key: "GameLevel")){
+            gameLevel = sharedPreference.string(forKey: "GameLevel")!
+        }
+        
+        
+        
+        
+        
     }
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+    }
+    
+    
+    // Check key  present
+    func isKeyPresentInUserDefaults(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
     }
 
 }
