@@ -27,12 +27,14 @@ class GameInterfaceController: WKInterfaceController {
     @IBOutlet weak var selectableButtonBanana: WKInterfaceButton!
     @IBOutlet weak var selectableButtonGrapes: WKInterfaceButton!
     @IBOutlet weak var selectableButtonWatermelon: WKInterfaceButton!
+    @IBOutlet weak var restartGameButton: WKInterfaceButton!
     
     
     // Game Stats Variables
     var randomSequence = [String]()
     var givenSequence = [String]()
     var noOfInputs = 0
+    var playAgain = false
     
     
     
@@ -45,6 +47,8 @@ class GameInterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        self.setTitle("Close")
         
         // Set it to its value set by the user
         if(self.isKeyPresentInUserDefaults(key: "GameLevel")){
@@ -251,12 +255,32 @@ class GameInterfaceController: WKInterfaceController {
     func matchTheSequence(){
         if(self.randomSequence == self.givenSequence){
             self.timeLabel.setText("You win \(self.sharedPreference.string(forKey: "playerName")!)!")
-            
+            self.showRestartGameButton()
         }else{
             self.timeLabel.setText("Oops Wrong!")
+            self.showRestartGameButton()
         }
 
     }
-   
+    
+    
+    // RESTART GAME FUNCTIONS
+    
+    // Show the button
+    func showRestartGameButton(){
+        self.restartGameButton.setHidden(false)
+    }
+    
+    // Restart Game when pressed
+    @IBAction func restartGameButtonPressed() {
+    
+        //print("Restart Button Pressed!")
+        
+        // Show that player has selected to play again
+        playAgain = true
+       presentController(withName: "gameSegue", context: nil)
+        
+    }
+    
     
 }

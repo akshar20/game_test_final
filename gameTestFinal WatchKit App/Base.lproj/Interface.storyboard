@@ -65,7 +65,16 @@
             <objects>
                 <controller identifier="gameSegue" id="GYw-0B-pbs" customClass="GameInterfaceController" customModule="gameTestFinal_WatchKit_Extension">
                     <items>
-                        <label alignment="center" text="Memorize it!" textAlignment="center" id="j7r-xn-7m4"/>
+                        <group width="136" height="23" alignment="left" radius="8" spacing="3" id="9u5-Wa-RC9">
+                            <items>
+                                <label width="79" alignment="left" text="Memorize!" textAlignment="center" id="j7r-xn-7m4"/>
+                                <button width="52" height="24" alignment="left" hidden="YES" title="Play!" id="Oag-iO-REI">
+                                    <connections>
+                                        <action selector="restartGameButtonPressed" destination="GYw-0B-pbs" id="iAf-LW-8KA"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                         <separator alignment="left" id="CkN-G8-glJ">
                             <color key="color" red="0.054498137269999997" green="0.66976466720000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </separator>
@@ -78,8 +87,8 @@
                             </items>
                             <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                         </group>
-                        <label alignment="center" verticalAlignment="center" text="Timer Loading..." id="xZb-Jb-B7l"/>
-                        <group width="69" alignment="center" verticalAlignment="bottom" spacing="12" id="FWQ-wC-E48">
+                        <label alignment="center" verticalAlignment="center" text="5" id="xZb-Jb-B7l"/>
+                        <group width="70" alignment="center" verticalAlignment="bottom" spacing="12" id="FWQ-wC-E48">
                             <items>
                                 <group width="32" alignment="left" layout="vertical" id="Edj-8D-YuP">
                                     <items>
@@ -118,6 +127,7 @@
                         <outlet property="memorizeImage2" destination="YPD-xR-dkS" id="cDL-pc-dJk"/>
                         <outlet property="memorizeImage3" destination="f1r-Iw-Wr6" id="2bl-wH-ht2"/>
                         <outlet property="memorizeImage4" destination="uzQ-XF-Faz" id="jna-Xa-g1d"/>
+                        <outlet property="restartGameButton" destination="Oag-iO-REI" id="qsA-Gc-x7X"/>
                         <outlet property="selectableButtonApple" destination="4ZG-XI-geq" id="lq6-4T-15J"/>
                         <outlet property="selectableButtonBanana" destination="zcr-4F-h7H" id="ynd-Ct-2L1"/>
                         <outlet property="selectableButtonGrapes" destination="K1M-5K-JaH" id="xhd-v5-ADe"/>
@@ -126,7 +136,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="514" y="-49"/>
+            <point key="canvasLocation" x="514" y="-59"/>
         </scene>
     </scenes>
 </document>
