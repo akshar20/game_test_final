@@ -18,8 +18,16 @@
                         <separator alignment="left" id="BV7-2z-x34">
                             <color key="color" red="0.054498137269096691" green="0.66976466716843719" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </separator>
-                        <button width="1" alignment="left" verticalAlignment="center" title="Button" id="tFi-2V-W6a"/>
+                        <button width="1" alignment="left" verticalAlignment="center" title="Button" id="tFi-2V-W6a">
+                            <connections>
+                                <action selector="baseButtonPressed" destination="AgC-eL-Hgc" id="mqt-kA-b3Y"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="baseButton" destination="tFi-2V-W6a" id="vX3-iO-xCd"/>
+                        <outlet property="helloLabel" destination="xOi-vf-qmY" id="0Ef-Jn-eE9"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="-61" y="-49"/>
